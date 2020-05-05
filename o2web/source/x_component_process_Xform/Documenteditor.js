@@ -724,17 +724,14 @@ MWF.xApplication.process.Xform.Documenteditor = MWF.APPDocumenteditor =  new Cla
     // },
     resizeToolbar: function(){
         if (this.toolbarNode){
-            var p = this.toolNode.getPosition(this.scrollNode);
+            var p = this.toolNode.getPosition(this.form.app.content);
             var size = this.toolNode.getSize();
             var pl = this.toolbarNode.getStyle("padding-left").toInt();
             var pr = this.toolbarNode.getStyle("padding-right").toInt();
             var x = size.x-pl-pr;
 
-            //var pNode = this.toolNode.getOffsetParent();
-
-
             if (p.y<0){
-                this.toolbarNode.inject(this.scrollNode);
+                this.toolbarNode.inject(this.form.node);
                 this.toolbarNode.setStyles({
                     "position": "absolute",
                     "width": ""+x+"px",

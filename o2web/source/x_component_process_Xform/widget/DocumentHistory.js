@@ -7,7 +7,6 @@ MWF.xApplication.process.Xform.widget.DocumentHistory = new Class({
         "inforTime": 2000
     },
     initialize: function(documentEditor, options){
-        debugger;
         this.setOptions(options);
         this.documentEditor = documentEditor;
         this.css = this.documentEditor.css;
@@ -33,8 +32,6 @@ MWF.xApplication.process.Xform.widget.DocumentHistory = new Class({
                     if (!layout.mobile) this.loadHistoryList();
                     if (callback) callback();
                 }.bind(this));
-            }else{
-                this.documentEditor.form.app.notice(MWF.xApplication.process.Xform.LP.documentHistory.nodiff, "info", this.documentEditor.node);
             }
         }.bind(this));
     },
@@ -486,8 +483,6 @@ MWF.xApplication.process.Xform.widget.DocumentHistory = new Class({
                     if (callback) callback();
 
                 }.bind(this));
-            }else{
-                this.documentEditor.form.app.notice(MWF.xApplication.process.Xform.LP.documentHistory.nodiff, "info", this.documentEditor.node);
             }
         }.bind(this));
     },
